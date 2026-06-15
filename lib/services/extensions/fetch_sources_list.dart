@@ -9,7 +9,7 @@ import 'package:dokusho/models/manga.dart';
 import 'package:dokusho/models/settings.dart';
 import 'package:dokusho/models/source.dart';
 import 'package:dokusho/services/http/m_client.dart';
-import 'package:dokusho/services/isolate_service.dart';
+import 'package:dokusho/services/system/isolate_service.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 Future<void> fetchSourcesList({

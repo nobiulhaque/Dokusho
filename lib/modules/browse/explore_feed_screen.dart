@@ -9,7 +9,7 @@ import 'package:dokusho/models/manga.dart';
 import 'package:dokusho/models/source.dart';
 import 'package:dokusho/modules/widgets/manga_image_card_widget.dart';
 import 'package:dokusho/modules/widgets/progress_center.dart';
-import 'package:dokusho/services/get_popular.dart';
+import 'package:dokusho/services/media/get_popular.dart';
 import 'package:dokusho/utils/extensions/build_context_extensions.dart';
 
 class ExploreFeedScreen extends ConsumerStatefulWidget {

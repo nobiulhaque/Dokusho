@@ -4,14 +4,14 @@ import 'package:dokusho/models/chapter.dart';
 import 'package:dokusho/models/video.dart';
 import 'package:dokusho/modules/more/settings/browse/providers/browse_state_provider.dart';
 import 'package:dokusho/providers/storage_provider.dart';
-import 'package:dokusho/services/isolate_service.dart';
-import 'package:dokusho/services/torrent_server.dart';
+import 'package:dokusho/services/system/isolate_service.dart';
+import 'package:dokusho/services/system/torrent_server.dart';
 import 'package:dokusho/utils/utils.dart';
 import 'package:dokusho/utils/extensions/string_extensions.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:path/path.dart' as p;
 
-import '../models/source.dart';
+import 'package:dokusho/models/source.dart';
 part 'get_video_list.g.dart';
 
 @riverpod

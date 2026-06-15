@@ -4,7 +4,7 @@ import 'package:dokusho/main.dart';
 import 'package:dokusho/models/manga.dart';
 import 'package:dokusho/models/settings.dart';
 import 'package:dokusho/models/source.dart';
-import 'package:dokusho/services/fetch_item_sources.dart';
+import 'package:dokusho/services/extensions/fetch_item_sources.dart';
 import 'package:dokusho/services/http/m_client.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'browse_state_provider.g.dart';

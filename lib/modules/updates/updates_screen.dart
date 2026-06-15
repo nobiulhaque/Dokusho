@@ -12,7 +12,7 @@ import 'package:dokusho/models/manga.dart';
 import 'package:dokusho/modules/updates/widgets/update_chapter_list_tile_widget.dart';
 import 'package:dokusho/modules/history/providers/isar_providers.dart';
 import 'package:dokusho/providers/l10n_providers.dart';
-import 'package:dokusho/services/library_updater.dart';
+import 'package:dokusho/services/system/library_updater.dart';
 import 'package:dokusho/utils/date.dart';
 import 'package:dokusho/modules/widgets/error_text.dart';
 import 'package:dokusho/modules/widgets/progress_center.dart';

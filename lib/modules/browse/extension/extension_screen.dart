@@ -6,10 +6,10 @@ import 'package:dokusho/modules/widgets/custom_sliver_grouped_list_view.dart';
 import 'package:dokusho/models/manga.dart';
 import 'package:dokusho/models/source.dart';
 import 'package:dokusho/modules/browse/extension/providers/extensions_provider.dart';
-import 'package:dokusho/services/fetch_item_sources.dart';
+import 'package:dokusho/services/extensions/fetch_item_sources.dart';
 import 'package:dokusho/modules/widgets/progress_center.dart';
 import 'package:dokusho/providers/l10n_providers.dart';
-import 'package:dokusho/services/fetch_sources_list.dart';
+import 'package:dokusho/services/extensions/fetch_sources_list.dart';
 import 'package:dokusho/utils/language.dart';
 import 'package:dokusho/modules/browse/extension/widgets/extension_list_tile_widget.dart';
 

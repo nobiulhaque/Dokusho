@@ -4,7 +4,7 @@ import 'package:isar_community/isar.dart';
 import 'package:dokusho/eval/model/source_preference.dart';
 import 'package:dokusho/main.dart';
 import 'package:dokusho/models/source.dart';
-import 'package:dokusho/services/get_source_preference.dart';
+import 'package:dokusho/services/extensions/get_source_preference.dart';
 
 void setPreferenceSetting(SourcePreference sourcePreference, Source source) {
   final sourcePref = isar.sourcePreferences

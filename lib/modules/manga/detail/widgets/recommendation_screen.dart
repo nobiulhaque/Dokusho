@@ -5,7 +5,7 @@ import 'package:dokusho/models/settings.dart';
 import 'package:dokusho/modules/widgets/custom_extended_image_provider.dart';
 import 'package:dokusho/modules/widgets/progress_center.dart';
 import 'package:dokusho/providers/l10n_providers.dart';
-import 'package:dokusho/services/recommendation.dart';
+import 'package:dokusho/services/system/recommendation.dart';
 import 'package:dokusho/utils/constant.dart';
 import 'package:dokusho/utils/extensions/build_context_extensions.dart';
 import 'package:marquee/marquee.dart';

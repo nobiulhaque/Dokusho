@@ -10,7 +10,7 @@ import 'package:dokusho/modules/library/widgets/library_listview_widget.dart';
 import 'package:dokusho/modules/widgets/error_text.dart';
 import 'package:dokusho/modules/widgets/progress_center.dart';
 import 'package:dokusho/providers/l10n_providers.dart';
-import 'package:dokusho/services/library_updater.dart';
+import 'package:dokusho/services/system/library_updater.dart';
 
 /// Displays the library body content for a given category (or uncategorized).
 ///

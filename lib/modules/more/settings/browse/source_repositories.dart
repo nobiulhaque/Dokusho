@@ -7,7 +7,7 @@ import 'package:dokusho/models/settings.dart';
 import 'package:dokusho/modules/more/settings/browse/providers/browse_state_provider.dart';
 import 'package:dokusho/modules/widgets/progress_center.dart';
 import 'package:dokusho/providers/l10n_providers.dart';
-import 'package:dokusho/services/fetch_item_sources.dart';
+import 'package:dokusho/services/extensions/fetch_item_sources.dart';
 import 'package:dokusho/utils/cached_network.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
 import 'package:url_launcher/url_launcher.dart';

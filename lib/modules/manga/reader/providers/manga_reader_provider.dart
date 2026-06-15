@@ -1,6 +1,6 @@
 import 'package:dokusho/main.dart';
 import 'package:dokusho/models/chapter.dart';
-import 'package:dokusho/services/get_chapter_pages.dart';
+import 'package:dokusho/services/media/get_chapter_pages.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'manga_reader_provider.g.dart';
 

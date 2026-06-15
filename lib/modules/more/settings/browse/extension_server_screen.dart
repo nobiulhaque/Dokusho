@@ -15,8 +15,8 @@ import 'package:dokusho/modules/more/settings/browse/extension_server/extension_
 import 'package:dokusho/modules/more/settings/browse/extension_server/extension_server_utils.dart';
 import 'package:dokusho/modules/more/settings/browse/providers/browse_state_provider.dart';
 import 'package:dokusho/providers/l10n_providers.dart';
-import 'package:dokusho/services/fetch_sources_list.dart';
-import 'package:dokusho/services/m_extension_server.dart';
+import 'package:dokusho/services/extensions/fetch_sources_list.dart';
+import 'package:dokusho/services/extensions/m_extension_server.dart';
 import 'package:dokusho/utils/extensions/build_context_extensions.dart';
 import 'package:dokusho/utils/platform_utils.dart';
 import 'package:path/path.dart' as path;

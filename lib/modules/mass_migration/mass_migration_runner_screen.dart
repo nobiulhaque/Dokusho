@@ -8,7 +8,7 @@ import 'package:dokusho/modules/mass_migration/models/mass_migration_models.dart
 import 'package:dokusho/modules/mass_migration/services/mass_migration_service.dart';
 import 'package:dokusho/modules/mass_migration/widgets/mass_migration_widgets.dart';
 import 'package:dokusho/providers/l10n_providers.dart';
-import 'package:dokusho/services/get_detail.dart';
+import 'package:dokusho/services/media/get_detail.dart';
 import 'package:dokusho/utils/language.dart';
 
 enum _MassMigrationPhase { matching, review, applying, summary }

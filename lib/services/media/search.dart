@@ -6,15 +6,17 @@ import 'package:dokusho/main.dart';
 import 'package:dokusho/models/manga.dart';
 import 'package:dokusho/models/source.dart';
 import 'package:dokusho/modules/more/settings/browse/providers/browse_state_provider.dart';
-import 'package:dokusho/services/isolate_service.dart';
+import 'package:dokusho/services/system/isolate_service.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-part 'get_popular.g.dart';
+part 'search.g.dart';
 
 @riverpod
-Future<MPages?> getPopular(
+Future<MPages?> search(
   Ref ref, {
   required Source source,
+  required String query,
   required int page,
+  required List<dynamic> filterList,
 }) async {
   if (source.name == "local" && source.lang == "") {
     final result =
@@ -29,7 +31,7 @@ Future<MPages?> getPopular(
                       .or()
                       .linkContains("Mangayomi\\local"),
                 )
-                .sortByName()
+                .nameContains(query, caseSensitive: false)
                 .offset(max(0, page - 1) * 50)
                 .limit(50)
                 .findAll())
@@ -37,11 +39,12 @@ Future<MPages?> getPopular(
             .toList();
     return MPages(list: result, hasNextPage: true);
   }
-
   return getIsolateService.get<MPages?>(
-    page: page,
+    query: query,
+    filterList: filterList,
     source: source,
-    serviceType: 'getPopular',
+    page: page,
+    serviceType: 'search',
     proxyServer: ref.read(androidProxyServerStateProvider),
   );
 }

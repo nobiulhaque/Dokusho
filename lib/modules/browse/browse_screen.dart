@@ -10,7 +10,7 @@ import 'package:dokusho/providers/storage_provider.dart';
 import 'package:dokusho/modules/browse/extension/extension_screen.dart';
 import 'package:dokusho/modules/browse/explore_feed_screen.dart';
 import 'package:dokusho/modules/library/widgets/search_text_form_field.dart';
-import 'package:dokusho/services/fetch_sources_list.dart';
+import 'package:dokusho/services/extensions/fetch_sources_list.dart';
 import 'package:dokusho/utils/item_type_localization.dart';
 
 class BrowseScreen extends ConsumerStatefulWidget {

@@ -26,7 +26,7 @@ import 'package:dokusho/providers/l10n_providers.dart';
 import 'package:dokusho/utils/extensions/others.dart';
 import 'package:dokusho/utils/riverpod.dart';
 import 'package:dokusho/modules/manga/reader/providers/push_router.dart';
-import 'package:dokusho/services/get_chapter_pages.dart';
+import 'package:dokusho/services/media/get_chapter_pages.dart';
 import 'package:dokusho/utils/extensions/build_context_extensions.dart';
 import 'package:dokusho/modules/manga/reader/image_view_paged.dart';
 import 'package:dokusho/modules/manga/reader/providers/reader_controller_provider.dart';

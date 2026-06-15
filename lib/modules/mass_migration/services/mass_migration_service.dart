@@ -12,8 +12,8 @@ import 'package:dokusho/models/update.dart';
 import 'package:dokusho/modules/mass_migration/models/mass_migration_models.dart';
 import 'package:dokusho/modules/manga/detail/providers/isar_providers.dart';
 import 'package:dokusho/modules/more/settings/sync/providers/sync_providers.dart';
-import 'package:dokusho/services/get_detail.dart';
-import 'package:dokusho/services/search.dart';
+import 'package:dokusho/services/media/get_detail.dart';
+import 'package:dokusho/services/media/search.dart';
 import 'package:dokusho/utils/extensions/string_extensions.dart';
 
 Future<void> migrateLibraryItem({

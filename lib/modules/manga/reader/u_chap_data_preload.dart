@@ -3,7 +3,7 @@ import 'dart:typed_data';
 
 import 'package:dokusho/models/chapter.dart';
 import 'package:dokusho/models/page.dart';
-import 'package:dokusho/services/get_chapter_pages.dart';
+import 'package:dokusho/services/media/get_chapter_pages.dart';
 
 class UChapDataPreload {
   Chapter? chapter;

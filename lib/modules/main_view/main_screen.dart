@@ -16,14 +16,14 @@ import 'package:dokusho/modules/more/providers/downloaded_only_state_provider.da
 import 'package:dokusho/modules/more/settings/reader/providers/reader_state_provider.dart';
 import 'package:dokusho/modules/more/settings/sync/providers/sync_providers.dart';
 import 'package:dokusho/modules/widgets/loading_icon.dart';
-import 'package:dokusho/services/fetch_item_sources.dart';
+import 'package:dokusho/services/extensions/fetch_item_sources.dart';
 import 'package:dokusho/modules/main_view/providers/migration.dart';
 import 'package:dokusho/modules/more/about/providers/check_for_update.dart';
 import 'package:dokusho/modules/more/data_and_storage/providers/auto_backup.dart';
 import 'package:dokusho/providers/l10n_providers.dart';
 import 'package:dokusho/router/router.dart';
-import 'package:dokusho/services/fetch_sources_list.dart';
-import 'package:dokusho/services/sync_server.dart';
+import 'package:dokusho/services/extensions/fetch_sources_list.dart';
+import 'package:dokusho/services/system/sync_server.dart';
 import 'package:dokusho/utils/extensions/build_context_extensions.dart';
 import 'package:dokusho/modules/manga/detail/providers/state_providers.dart';
 import 'package:dokusho/modules/more/providers/incognito_mode_state_provider.dart';

@@ -13,7 +13,7 @@ import 'package:dokusho/modules/manga/detail/providers/state_providers.dart';
 import 'package:dokusho/modules/widgets/error_text.dart';
 import 'package:dokusho/modules/widgets/progress_center.dart';
 import 'package:dokusho/providers/l10n_providers.dart';
-import 'package:dokusho/services/library_updater.dart';
+import 'package:dokusho/services/system/library_updater.dart';
 import 'package:dokusho/utils/extensions/build_context_extensions.dart';
 import 'package:dokusho/utils/global_style.dart';
 import 'package:dokusho/utils/item_type_localization.dart';

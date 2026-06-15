@@ -4,7 +4,7 @@ import 'package:dokusho/main.dart';
 import 'package:dokusho/models/chapter.dart';
 import 'package:dokusho/models/update.dart';
 import 'package:dokusho/models/manga.dart';
-import 'package:dokusho/services/get_detail.dart';
+import 'package:dokusho/services/media/get_detail.dart';
 import 'package:dokusho/utils/extensions/string_extensions.dart';
 import 'package:dokusho/utils/fetch_interval.dart';
 import 'package:dokusho/utils/utils.dart';

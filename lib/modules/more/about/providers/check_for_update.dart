@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/foundation.dart';
 import 'package:dokusho/main.dart';
 import 'package:dokusho/models/settings.dart';
-import 'package:dokusho/services/fetch_sources_list.dart';
+import 'package:dokusho/services/extensions/fetch_sources_list.dart';
 import 'package:dokusho/services/http/m_client.dart';
 import 'package:dokusho/utils/extensions/string_extensions.dart';
 import 'package:package_info_plus/package_info_plus.dart';

@@ -3,7 +3,7 @@ import 'dart:collection';
 import 'package:flutter/foundation.dart';
 import 'package:dokusho/models/chapter.dart';
 import 'package:dokusho/modules/manga/reader/u_chap_data_preload.dart';
-import 'package:dokusho/services/get_chapter_pages.dart';
+import 'package:dokusho/services/media/get_chapter_pages.dart';
 
 /// Manages the preloading and memory of chapters in the manga reader.
 ///

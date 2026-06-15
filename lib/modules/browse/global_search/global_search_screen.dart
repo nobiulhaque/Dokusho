@@ -11,7 +11,7 @@ import 'package:dokusho/modules/manga/home/manga_home_screen.dart';
 import 'package:dokusho/providers/l10n_providers.dart';
 import 'package:dokusho/router/router.dart';
 import 'package:dokusho/models/source.dart';
-import 'package:dokusho/services/search.dart';
+import 'package:dokusho/services/media/search.dart';
 import 'package:dokusho/utils/cached_network.dart';
 import 'package:dokusho/utils/extensions/build_context_extensions.dart';
 import 'package:dokusho/utils/constant.dart';

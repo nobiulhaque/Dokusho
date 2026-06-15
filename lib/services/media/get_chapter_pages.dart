@@ -3,7 +3,7 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:dokusho/modules/manga/reader/u_chap_data_preload.dart';
 import 'package:dokusho/modules/more/settings/browse/providers/browse_state_provider.dart';
-import 'package:dokusho/services/isolate_service.dart';
+import 'package:dokusho/services/system/isolate_service.dart';
 import 'package:path/path.dart' as p;
 import 'package:dokusho/eval/javascript/http.dart';
 import 'package:dokusho/main.dart';

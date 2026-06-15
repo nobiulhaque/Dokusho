@@ -16,8 +16,8 @@ import 'package:dokusho/modules/manga/detail/widgets/chapter_filter_list_tile_wi
 import 'package:dokusho/modules/more/settings/browse/providers/browse_state_provider.dart';
 import 'package:dokusho/providers/l10n_providers.dart';
 import 'package:dokusho/models/source.dart';
-import 'package:dokusho/services/get_detail.dart';
-import 'package:dokusho/services/search.dart';
+import 'package:dokusho/services/media/get_detail.dart';
+import 'package:dokusho/services/media/search.dart';
 import 'package:dokusho/utils/cached_network.dart';
 import 'package:dokusho/utils/date.dart';
 import 'package:dokusho/utils/extensions/build_context_extensions.dart';

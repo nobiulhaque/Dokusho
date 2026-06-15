@@ -12,7 +12,7 @@ import 'package:dokusho/modules/browse/extension/providers/extension_preferences
 import 'package:dokusho/modules/browse/extension/widgets/source_preference_widget.dart';
 import 'package:dokusho/modules/more/settings/sync/providers/sync_providers.dart';
 import 'package:dokusho/providers/l10n_providers.dart';
-import 'package:dokusho/services/get_source_preference.dart';
+import 'package:dokusho/services/extensions/get_source_preference.dart';
 import 'package:dokusho/services/http/m_client.dart';
 import 'package:dokusho/utils/cached_network.dart';
 import 'package:dokusho/utils/extensions/build_context_extensions.dart';

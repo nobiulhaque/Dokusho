@@ -8,7 +8,7 @@ import 'package:dokusho/utils/date.dart';
 import 'package:dokusho/models/sync_preference.dart';
 import 'package:dokusho/modules/more/settings/sync/widgets/sync_listile.dart';
 import 'package:dokusho/providers/l10n_providers.dart';
-import 'package:dokusho/services/sync_server.dart';
+import 'package:dokusho/services/system/sync_server.dart';
 import 'package:dokusho/utils/extensions/build_context_extensions.dart';
 import 'package:dokusho/utils/log/logger.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
