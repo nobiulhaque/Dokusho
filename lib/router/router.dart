@@ -8,13 +8,10 @@ import 'package:dokusho/models/settings.dart';
 import 'package:dokusho/models/source.dart';
 import 'package:dokusho/models/track.dart';
 import 'package:dokusho/models/track_preference.dart';
-import 'package:dokusho/models/track_search.dart';
-import 'package:dokusho/modules/anime/anime_player_view.dart';
 import 'package:dokusho/modules/browse/extension/edit_code.dart';
 import 'package:dokusho/modules/browse/extension/extension_detail.dart';
 import 'package:dokusho/modules/browse/extension/widgets/create_extension.dart';
 import 'package:dokusho/modules/browse/sources/sources_filter_screen.dart';
-import 'package:dokusho/modules/calendar/calendar_screen.dart';
 import 'package:dokusho/modules/manga/detail/widgets/migrate_screen.dart';
 import 'package:dokusho/modules/mass_migration/mass_migration_source_selection_screen.dart';
 import 'package:dokusho/modules/manga/detail/widgets/recommendation_screen.dart';
@@ -23,19 +20,11 @@ import 'package:dokusho/modules/more/data_and_storage/create_backup.dart';
 import 'package:dokusho/modules/more/data_and_storage/data_and_storage.dart';
 import 'package:dokusho/modules/more/settings/appearance/custom_navigation_settings.dart';
 import 'package:dokusho/modules/more/settings/browse/source_repositories.dart';
-import 'package:dokusho/modules/more/settings/player/custom_button_screen.dart';
-import 'package:dokusho/modules/more/settings/player/player_advanced_screen.dart';
-import 'package:dokusho/modules/more/settings/player/player_audio_screen.dart';
-import 'package:dokusho/modules/more/settings/player/player_decoder_screen.dart';
-import 'package:dokusho/modules/more/settings/player/player_overview_screen.dart';
 import 'package:dokusho/modules/more/settings/reader/providers/reader_state_provider.dart';
 import 'package:dokusho/modules/more/statistics/statistics_screen.dart';
-import 'package:dokusho/modules/novel/novel_reader_view.dart';
-import 'package:dokusho/modules/tracker_library/tracker_library_screen.dart';
 import 'package:dokusho/modules/updates/updates_screen.dart';
 import 'package:dokusho/modules/more/categories/categories_screen.dart';
 import 'package:dokusho/modules/more/settings/downloads/downloads_screen.dart';
-import 'package:dokusho/modules/more/settings/player/player_screen.dart';
 import 'package:dokusho/modules/more/settings/sync/sync.dart';
 import 'package:dokusho/modules/more/settings/track/track.dart';
 import 'package:dokusho/modules/more/settings/track/manage_trackers/manage_trackers.dart';
@@ -91,10 +80,9 @@ class RouterCurrentLocationState extends _$RouterCurrentLocationState {
   @override
   String? build() {
     ref.keepAlive();
-    // Delay listener‐registration until after the first frame.
+    // Delay listener-registration until after the first frame.
     if (!_didSubscribe) {
       _didSubscribe = true;
-      // Schedule the registration to run after the first build/frame:
       WidgetsBinding.instance.addPostFrameCallback((_) {
         _listener();
       });
@@ -132,20 +120,6 @@ class RouterNotifier extends ChangeNotifier {
           builder: (id) =>
               LibraryScreen(itemType: ItemType.manga, presetInput: id),
         ),
-        _genericRoute<String?>(
-          name: "AnimeLibrary",
-          builder: (id) =>
-              LibraryScreen(itemType: ItemType.anime, presetInput: id),
-        ),
-        _genericRoute<String?>(
-          name: "NovelLibrary",
-          builder: (id) =>
-              LibraryScreen(itemType: ItemType.novel, presetInput: id),
-        ),
-        _genericRoute<String?>(
-          name: "trackerLibrary",
-          builder: (id) => TrackerLibraryScreen(presetInput: id),
-        ),
         _genericRoute(name: "history", child: const HistoryScreen()),
         _genericRoute(name: "updates", child: const UpdatesScreen()),
         _genericRoute(name: "browse", child: const BrowseScreen()),
@@ -164,14 +138,6 @@ class RouterNotifier extends ChangeNotifier {
       name: "mangaReaderView",
       builder: (id) => MangaReaderView(chapterId: id),
     ),
-    _genericRoute<int>(
-      name: "animePlayerView",
-      builder: (id) => AnimePlayerView(episodeId: id),
-    ),
-    _genericRoute<int>(
-      name: "novelReaderView",
-      builder: (id) => NovelReaderView(chapterId: id),
-    ),
     _genericRoute<ItemType>(
       name: "ExtensionLang",
       builder: (itemType) => ExtensionsLang(itemType: itemType),
@@ -184,7 +150,8 @@ class RouterNotifier extends ChangeNotifier {
     ),
     _genericRoute<(String?, ItemType)>(
       name: "globalSearch",
-      builder: (data) => GlobalSearchScreen(search: data.$1, itemType: data.$2),
+      builder: (data) =>
+          GlobalSearchScreen(search: data.$1, itemType: data.$2),
     ),
     _genericRoute(name: "about", child: const AboutScreen()),
     _genericRoute(name: "track", child: const TrackScreen()),
@@ -196,7 +163,8 @@ class RouterNotifier extends ChangeNotifier {
     _genericRoute(name: "downloadQueue", child: const DownloadQueueScreen()),
     _genericRoute<Map<String, dynamic>>(
       name: "mangawebview",
-      builder: (data) => MangaWebView(url: data["url"]!, title: data['title']!),
+      builder: (data) =>
+          MangaWebView(url: data["url"]!, title: data['title']!),
     ),
     _genericRoute<(bool, int)>(
       name: "categories",
@@ -217,13 +185,14 @@ class RouterNotifier extends ChangeNotifier {
     _genericRoute(name: "downloads", child: const DownloadsScreen()),
     _genericRoute(name: "dataAndStorage", child: const DataAndStorage()),
     _genericRoute(name: "security", child: const SecurityScreen()),
-    _genericRoute(name: "manageTrackers", child: const ManageTrackersScreen()),
+    _genericRoute(
+      name: "manageTrackers",
+      child: const ManageTrackersScreen(),
+    ),
     _genericRoute<TrackPreference>(
       name: "trackingDetail",
       builder: (trackerPref) => TrackingDetail(trackerPref: trackerPref),
     ),
-    _genericRoute(name: "playerOverview", child: const PlayerOverviewScreen()),
-    _genericRoute(name: "playerMode", child: const PlayerScreen()),
     _genericRoute<int>(
       name: "codeEditor",
       builder: (sourceId) => CodeEditorPage(sourceId: sourceId),
@@ -234,23 +203,6 @@ class RouterNotifier extends ChangeNotifier {
       name: "customNavigationSettings",
       child: const CustomNavigationSettings(),
     ),
-    _genericRoute(
-      name: "customButtonScreen",
-      child: const CustomButtonScreen(),
-    ),
-    _genericRoute(
-      name: "playerDecoderScreen",
-      child: const PlayerDecoderScreen(),
-    ),
-    _genericRoute(name: "playerAudioScreen", child: const PlayerAudioScreen()),
-    _genericRoute(
-      name: "playerAdvancedScreen",
-      child: const PlayerAdvancedScreen(),
-    ),
-    _genericRoute<ItemType?>(
-      name: "calendarScreen",
-      builder: (itemType) => CalendarScreen(itemType: itemType),
-    ),
     _genericRoute<Manga>(
       name: "migrate",
       builder: (manga) => MigrationScreen(manga: manga),
@@ -259,10 +211,6 @@ class RouterNotifier extends ChangeNotifier {
       name: "massMigration",
       builder: (manga) =>
           MassMigrationSourceSelectionScreen(initialManga: manga),
-    ),
-    _genericRoute<(Manga, TrackSearch)>(
-      name: "migrate/tracker",
-      builder: (data) => MigrationScreen(manga: data.$1, trackSearch: data.$2),
     ),
     _genericRoute<(String, ItemType, AlgorithmWeights)>(
       name: "recommendations",

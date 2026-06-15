@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dokusho/services/trackers/tracker_providers.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -8,7 +9,6 @@ import 'package:dokusho/models/track_preference.dart';
 import 'package:dokusho/modules/more/settings/track/providers/track_providers.dart';
 import 'package:dokusho/modules/more/settings/track/widgets/track_listile.dart';
 import 'package:dokusho/modules/more/widgets/list_tile_widget.dart';
-import 'package:dokusho/modules/tracker_library/tracker_library_screen.dart';
 import 'package:dokusho/providers/l10n_providers.dart';
 import 'package:dokusho/services/trackers/anilist.dart';
 import 'package:dokusho/services/trackers/kitsu.dart';

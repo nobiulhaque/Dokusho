@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:dokusho/services/trackers/tracker_providers.dart';
 import 'package:go_router/go_router.dart';
 import 'package:isar_community/isar.dart';
 import 'package:dokusho/main.dart';
 import 'package:dokusho/models/manga.dart';
 import 'package:dokusho/models/track.dart';
 import 'package:dokusho/models/track_preference.dart';
-import 'package:dokusho/modules/tracker_library/tracker_library_screen.dart';
 import 'package:dokusho/modules/widgets/custom_extended_image_provider.dart';
 import 'package:dokusho/modules/widgets/progress_center.dart';
 import 'package:dokusho/providers/l10n_providers.dart';

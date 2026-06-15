@@ -99,7 +99,6 @@ class _MainScreenState extends ConsumerState<MainScreen> {
       }
     });
 
-    discordRpc?.connect(ref);
   }
 
   void _initializeTimers() {
@@ -161,7 +160,6 @@ class _MainScreenState extends ConsumerState<MainScreen> {
   void dispose() {
     _backupTimer?.cancel();
     _syncTimer?.cancel();
-    discordRpc?.disconnect();
     super.dispose();
   }
 

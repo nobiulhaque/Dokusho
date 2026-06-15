@@ -1,6 +1,5 @@
 name: dokusho
-description: Free and open source manga reader and anime streaming
-  cross-plateform app inspired by Tachiyomi and Aniyomi.
+description: Free and open source manga reader for Android — Dokusho.
 publish_to: "none"
 version: 0.7.80+107
 
@@ -41,26 +40,11 @@ dependencies:
   path_provider: ^2.1.5
   scrollable_positioned_list: ^0.3.8
   bot_toast: ^4.1.3
-  flutter_web_auth_2: ^4.1.0
   numberpicker: ^2.1.2
   encrypt: ^5.0.3
-  media_kit:
-    git:
-      url: https://github.com/kodjodevf/media-kit.git
-      path: media_kit
-  media_kit_video:
-    git:
-      url: https://github.com/kodjodevf/media-kit.git
-      path: media_kit_video
-  media_kit_libs_video:
-    git:
-      url: https://github.com/kodjodevf/media-kit.git
-      path: libs/universal/media_kit_libs_video
   crypto: ^3.0.7
   cupertino_icons: ^1.0.9
-  window_manager: ^0.5.1
   ffi: ^2.1.5
-  ffigen: ^20.1.1
   http_interceptor: ^2.0.0
   js_packer: ^0.0.6
   flutter_qjs:
@@ -79,35 +63,20 @@ dependencies:
   pseudom: ^1.0.1
   path: ^1.9.0
   freezed_annotation: ^3.0.0
-  desktop_webview_window:
-    git:
-      url: https://github.com/kodjodevf/desktop_webview_window.git
-      path: packages/desktop_webview_window
-      ref: main
-  screen_brightness: ^2.1.1
   flutter_html: ^3.0.0
   convert: ^3.1.2
   connectivity_plus: ^7.0.0
   app_links: ^7.0.0
-  win32: ^5.10.1
   protobuf: ^5.0.0
   fixnum: ^1.1.1
   device_info_plus: ^12.2.0
   marquee: ^2.2.3
   d4rt: ^0.2.2
-  hive: ^2.2.3
-  hive_flutter: ^1.1.0
-  flutter_discord_rpc_fork:
-    git:
-      url: https://github.com/Schnitzel5/flutter-discord-rpc.git
-      ref: main
-  table_calendar: ^3.2.0
-  local_auth: ^3.0.1
-  wakelock_plus: ^1.4.0
   m_extension_server:
     git:
       url: https://github.com/kodjodevf/m_extension_server.git
-  flutter_tts: ^4.2.5
+  local_auth: ^3.0.1
+  flutter_web_auth_2: ^4.1.0
 
 dependency_overrides:
   ffi: ^2.1.3
@@ -130,10 +99,7 @@ dev_dependencies:
       ref: v3
   flutter_lints: ^6.0.0
   freezed: ^3.0.0
-  inno_bundle: ^0.9.0
   protoc_plugin: ^23.0.0
-  # hive_generator:
-  #   path: plugins/hive_generator
 
 flutter:
   config:
@@ -145,29 +111,10 @@ flutter:
     - assets/
     - path: assets/fonts/
       platforms: [android]
-    - assets/trackers_icons/
     - assets/app_icons/
+    - assets/trackers_icons/
+
 flutter_launcher_icons:
   android: "launcher_icon"
-  ios: true
-  remove_alpha_ios: true
   image_path: "assets/app_icons/icon-red.png"
   min_sdk_android: 21
-  windows:
-    generate: true
-    image_path: "assets/app_icons/icon-red.png"
-  macos:
-    generate: true
-    image_path: "assets/app_icons/icon-red.png"
-inno_bundle:
-  id: 6CB26FFA-E72B-42C3-91E8-594940031CA2
-  publisher: kodjodevf
-  name: Mangayomi
-  url: https://github.com/kodjodevf/mangayomi/
-  support_url: https://github.com/kodjodevf/mangayomi/
-  updates_url: https://github.com/kodjodevf/mangayomi/releases/
-  languages:
-    - english
-    - french
-    - german
-  admin: false

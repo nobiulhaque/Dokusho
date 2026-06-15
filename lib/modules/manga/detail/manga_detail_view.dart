@@ -28,7 +28,7 @@ import 'package:dokusho/utils/extensions/chapter_extensions.dart';
 import 'package:dokusho/modules/more/providers/algorithm_weights_state_provider.dart';
 import 'package:dokusho/modules/more/settings/appearance/providers/pure_black_dark_mode_state_provider.dart';
 import 'package:dokusho/modules/more/settings/track/widgets/track_listile.dart';
-import 'package:dokusho/modules/tracker_library/tracker_library_screen.dart';
+import 'package:dokusho/services/trackers/tracker_providers.dart';
 import 'package:dokusho/modules/widgets/bottom_select_bar.dart';
 import 'package:dokusho/modules/widgets/category_selection_dialog.dart';
 import 'package:dokusho/modules/widgets/custom_draggable_tabbar.dart';

@@ -4,13 +4,13 @@ import 'package:dokusho/models/settings.dart';
 import 'package:dokusho/models/track.dart';
 import 'package:dokusho/models/track_search.dart';
 import 'package:dokusho/modules/more/settings/track/providers/track_providers.dart';
-import 'package:dokusho/modules/tracker_library/tracker_library_screen.dart';
 import 'package:dokusho/services/trackers/anilist.dart';
 import 'package:dokusho/services/trackers/base_tracker.dart';
 import 'package:dokusho/services/trackers/kitsu.dart';
 import 'package:dokusho/services/trackers/myanimelist.dart';
 import 'package:dokusho/services/trackers/simkl.dart';
 import 'package:dokusho/services/trackers/trakt_tv.dart';
+import 'package:dokusho/services/trackers/tracker_providers.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'track_state_providers.g.dart';
 

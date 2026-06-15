@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:dokusho/utils/platform_utils.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
@@ -9,7 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:dokusho/main.dart';
 import 'package:dokusho/models/chapter.dart';
 import 'package:dokusho/models/settings.dart';
-import 'package:dokusho/modules/anime/widgets/desktop.dart';
+
 import 'package:dokusho/modules/manga/reader/mixins/reader_gestures.dart';
 import 'package:dokusho/modules/manga/reader/providers/crop_borders_provider.dart';
 import 'package:dokusho/modules/manga/reader/services/page_navigation_service.dart';
@@ -40,8 +39,7 @@ import 'package:dokusho/modules/widgets/progress_center.dart';
 import 'package:dokusho/utils/system_ui.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-import 'package:wakelock_plus/wakelock_plus.dart';
-import 'package:window_manager/window_manager.dart';
+
 
 typedef DoubleClickAnimationListener = void Function();
 
@@ -184,12 +182,9 @@ class _MangaChapterPageGalleryState
     clearGestureDetailsCache();
     if (_isNavigatingToChapter) {
       _isNavigatingToChapter = false;
-    } else if (isDesktop) {
-      setFullScreen(value: false);
     } else {
       restoreSystemUI();
     }
-    discordRpc?.showIdleText();
     final actualIdx = _pageViewToActualIndexSync(_currentIndex!);
     final index = pages[actualIdx].index;
     if (index != null) {
@@ -200,7 +195,6 @@ class _MangaChapterPageGalleryState
     }
     disposePreloadManager();
     _readerController.keepAliveLink?.close();
-    WakelockPlus.disable();
     super.dispose();
   }
 
@@ -272,16 +266,7 @@ class _MangaChapterPageGalleryState
       extendedController: _extendedController,
     );
     _initCurrentIndex();
-    discordRpc?.showChapterDetails(ref, chapter);
     WidgetsBinding.instance.addObserver(this);
-    _initWakelock();
-  }
-
-  void _initWakelock() {
-    final keepOn = isar.settings.getSync(227)!.keepScreenOnReader ?? true;
-    if (keepOn) {
-      WakelockPlus.enable();
-    }
   }
 
   // final double _horizontalScaleValue = 1.0;
@@ -340,11 +325,8 @@ class _MangaChapterPageGalleryState
       Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.9);
 
   void _setFullScreen({bool? value}) async {
-    if (isDesktop) {
-      value = await windowManager.isFullScreen();
-      setFullScreen(value: !value);
-    }
-    ref.read(fullScreenReaderStateProvider.notifier).set(!value!);
+    final current = ref.read(fullScreenReaderStateProvider);
+    ref.read(fullScreenReaderStateProvider.notifier).set(value ?? !current);
   }
 
   /// Goes to either next or previous chapter
@@ -1106,11 +1088,7 @@ class _MangaChapterPageGalleryState
     await Future(() {});
     final fullScreenReader = ref.watch(fullScreenReaderStateProvider);
     if (fullScreenReader) {
-      if (isDesktop) {
-        setFullScreen(value: true);
-      } else {
-        SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-      }
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     }
     ref.read(_currentReaderMode.notifier).state = readerMode;
     if (mounted) {

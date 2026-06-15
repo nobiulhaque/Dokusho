@@ -1,17 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 import 'package:app_links/app_links.dart';
-import 'package:archive/archive.dart';
 import 'package:bot_toast/bot_toast.dart';
-import 'package:desktop_webview_window/desktop_webview_window.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hive_flutter/adapters.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:isar_community/isar.dart';
 import 'package:dokusho/eval/model/m_bridge.dart';
@@ -19,10 +14,6 @@ import 'package:dokusho/models/custom_button.dart';
 import 'package:dokusho/models/manga.dart';
 import 'package:dokusho/models/settings.dart';
 import 'package:dokusho/models/source.dart';
-import 'package:dokusho/models/track.dart' as track;
-import 'package:dokusho/models/track_preference.dart';
-import 'package:dokusho/models/track_search.dart';
-import 'package:dokusho/modules/manga/detail/providers/track_state_providers.dart';
 import 'package:dokusho/modules/manga/reader/providers/crop_borders_provider.dart';
 import 'package:dokusho/modules/more/data_and_storage/providers/storage_usage.dart';
 import 'package:dokusho/modules/more/settings/browse/providers/browse_state_provider.dart';
@@ -37,40 +28,26 @@ import 'package:dokusho/services/isolate_service.dart';
 import 'package:dokusho/services/m_extension_server.dart';
 import 'package:dokusho/services/download_manager/m_downloader.dart';
 import 'package:dokusho/src/rust/frb_generated.dart';
-import 'package:dokusho/utils/discord_rpc.dart';
 import 'package:dokusho/utils/log/logger.dart';
-import 'package:dokusho/utils/platform_utils.dart';
-import 'package:dokusho/utils/url_protocol/api.dart';
 import 'package:dokusho/modules/more/settings/appearance/providers/theme_provider.dart';
 import 'package:dokusho/modules/library/providers/file_scanner.dart';
 import 'package:dokusho/modules/more/settings/security/providers/security_state_provider.dart';
 import 'package:dokusho/modules/more/settings/security/app_lock_screen.dart';
-import 'package:media_kit/media_kit.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:window_manager/window_manager.dart';
-import 'package:path/path.dart' as p;
-import 'package:flutter/services.dart' show rootBundle;
-import 'package:dokusho/utils/window_geometry.dart';
 
 late Isar isar;
-DiscordRPC? discordRpc;
 WebViewEnvironment? webViewEnvironment;
 String? customDns;
+
 void main(List<String> args) async {
   // Zone-level catch-all for anything that slips through both layers
   runZonedGuarded(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
-      if (Platform.isLinux && runWebViewTitleBarWidget(args)) return;
 
       // Cap the decoded image cache so a large library grid can't fill the
       // default 100 MB ceiling with full-resolution covers and OOM constrained
-      // mobile heaps. Mobile gets a tight 64 MB; desktop keeps 256 MB. The
-      // encoded-bytes LRU in CustomExtendedNetworkImageProvider (50 MB) is a
-      // separate cache and is not affected by this setting.
-      PaintingBinding.instance.imageCache.maximumSizeBytes = isMobile
-          ? 64 << 20
-          : 256 << 20;
+      // mobile heaps. Mobile gets a tight 64 MB.
+      PaintingBinding.instance.imageCache.maximumSizeBytes = 64 << 20;
 
       // Widget-layer errors (build / layout / paint)
       FlutterError.onError = (FlutterErrorDetails details) {
@@ -90,28 +67,10 @@ void main(List<String> args) async {
         return true; // handled — prevent app termination
       };
 
-      MediaKit.ensureInitialized();
       await RustLib.init();
       await imgCropIsolate.start();
       await getIsolateService.start();
-      if (!isMobile) {
-        await windowManager.ensureInitialized();
-        await WindowGeometry.restore();
-      }
-      if (Platform.isWindows) {
-        registerProtocolHandler("mangayomi");
-      }
-      if (!kIsWeb && defaultTargetPlatform == TargetPlatform.windows) {
-        final availableVersion = await WebViewEnvironment.getAvailableVersion();
-        if (availableVersion != null) {
-          final document = await getApplicationDocumentsDirectory();
-          webViewEnvironment = await WebViewEnvironment.create(
-            settings: WebViewEnvironmentSettings(
-              userDataFolder: p.join(document.path, 'flutter_inappwebview'),
-            ),
-          );
-        }
-      }
+
       final storage = StorageProvider();
       await storage.requestPermission();
       Object? startupError;
@@ -154,7 +113,7 @@ class _StartupErrorApp extends StatelessWidget {
                 const Icon(Icons.error_outline, size: 64, color: Colors.red),
                 const SizedBox(height: 16),
                 const Text(
-                  'Failed to start Mangayomi',
+                  'Failed to start Dokusho',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 8),
@@ -174,13 +133,6 @@ class _StartupErrorApp extends StatelessWidget {
 Future<void> _postLaunchInit(StorageProvider storage) async {
   await AppLogger.init();
   unawaited(MDownloader.initializeIsolatePool(poolSize: 6));
-  final hivePath = isApple ? "databases" : p.join("Mangayomi", "databases");
-  await Hive.initFlutter(Platform.isAndroid ? "" : hivePath);
-  Hive.registerAdapter(TrackSearchAdapter());
-  if (isDesktop && !kDebugMode) {
-    discordRpc = DiscordRPC(applicationId: "1395040506677039157");
-    await discordRpc?.initialize();
-  }
   await storage.deleteBtDirectory();
   await webviewServer();
 }
@@ -192,8 +144,7 @@ class MyApp extends ConsumerStatefulWidget {
   ConsumerState<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends ConsumerState<MyApp>
-    with WidgetsBindingObserver, WindowListener {
+class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
   late AppLinks _appLinks;
   StreamSubscription<Uri>? _linkSubscription;
   Uri? lastUri;
@@ -202,13 +153,9 @@ class _MyAppState extends ConsumerState<MyApp>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    if (!isMobile) windowManager.addListener(this);
     initializeDateFormatting();
     customDns = ref.read(customDnsStateProvider);
-    _checkTrackerRefresh();
     _initDeepLinks();
-    _setupMpvConfig();
-    unawaited(ref.read(scanLocalLibraryProvider.future));
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       MExtensionServerPlatform(ref).startServer();
@@ -220,6 +167,7 @@ class _MyAppState extends ConsumerState<MyApp>
             .clearCache(showToast: false);
       }
     });
+    unawaited(ref.read(scanLocalLibraryProvider.future));
   }
 
   @override
@@ -227,9 +175,6 @@ class _MyAppState extends ConsumerState<MyApp>
     super.didChangeAppLifecycleState(state);
     if (state == AppLifecycleState.paused ||
         state == AppLifecycleState.hidden) {
-      if (Platform.isLinux) {
-        return;
-      }
       // Lock the app when going to background (if lock is enabled)
       final lockEnabled = isar.settings.getSync(227)!.appLockEnabled ?? false;
       if (lockEnabled) {
@@ -258,27 +203,22 @@ class _MyAppState extends ConsumerState<MyApp>
       supportedLocales: AppLocalizations.supportedLocales,
       builder: (context, child) {
         final base = BotToastInit()(context, child);
-        final withBackHandler = !isMobile
-            ? _MouseBackButtonHandler(router: router, child: base)
-            : base;
 
-        if (!Platform.isLinux) {
-          final isUnlocked = ref.watch(appUnlockedStateProvider);
-          final lockEnabled = ref.watch(appLockEnabledStateProvider);
-          if (lockEnabled && !isUnlocked) {
-            return Stack(
-              fit: StackFit.expand,
-              children: [withBackHandler, const AppLockScreen()],
-            );
-          }
+        final isUnlocked = ref.watch(appUnlockedStateProvider);
+        final lockEnabled = ref.watch(appLockEnabledStateProvider);
+        if (lockEnabled && !isUnlocked) {
+          return Stack(
+            fit: StackFit.expand,
+            children: [base, const AppLockScreen()],
+          );
         }
 
-        return withBackHandler;
+        return base;
       },
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,
       routeInformationProvider: router.routeInformationProvider,
-      title: 'MangaYomi',
+      title: 'Dokusho',
       scrollBehavior: AllowScrollBehavior(),
     );
   }
@@ -286,29 +226,11 @@ class _MyAppState extends ConsumerState<MyApp>
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
-    if (!isMobile) {
-      windowManager.removeListener(this);
-      WindowGeometry.save();
-    }
     MExtensionServerPlatform(ref).stopServer();
     _linkSubscription?.cancel();
-    discordRpc?.destroy();
     stopwebviewServer();
     AppLogger.dispose();
     super.dispose();
-  }
-
-  @override
-  void onWindowResized() => WindowGeometry.save();
-
-  @override
-  void onWindowMoved() => WindowGeometry.save();
-
-  @override
-  void onWindowClose() {
-    WindowGeometry.save();
-    // Workaround for libepoxy error when closing app; caused by media-kit
-    if (Platform.isLinux) exit(0);
   }
 
   Future<void> _initDeepLinks() async {
@@ -321,8 +243,6 @@ class _MyAppState extends ConsumerState<MyApp>
           final repoName = uri.queryParameters["repo_name"];
           final repoUrl = uri.queryParameters["repo_url"];
           final mangaRepoUrls = uri.queryParametersAll["manga_url"];
-          final animeRepoUrls = uri.queryParametersAll["anime_url"];
-          final novelRepoUrls = uri.queryParametersAll["novel_url"];
           final context = navigatorKey.currentContext;
           if (context == null || !context.mounted) return;
           final l10n = context.l10n;
@@ -352,8 +272,6 @@ class _MyAppState extends ConsumerState<MyApp>
 
                       final validUrls = await _checkValidUrls([
                         ...mangaRepoUrls ?? [],
-                        ...animeRepoUrls ?? [],
-                        ...novelRepoUrls ?? [],
                       ]);
 
                       if (!validUrls) {
@@ -382,8 +300,6 @@ class _MyAppState extends ConsumerState<MyApp>
                       }
 
                       addRepos(ItemType.manga, mangaRepoUrls);
-                      addRepos(ItemType.anime, animeRepoUrls);
-                      addRepos(ItemType.novel, novelRepoUrls);
                       botToast(l10n.repo_added);
                     },
                   ),
@@ -470,89 +386,13 @@ class _MyAppState extends ConsumerState<MyApp>
     }
     return true;
   }
-
-  Future<void> _setupMpvConfig() async {
-    final provider = StorageProvider();
-    final dir = await provider.getMpvDirectory();
-    final mpvFile = File('${dir!.path}/mpv.conf');
-    final inputFile = File('${dir.path}/input.conf');
-    final filesMissing =
-        !(await mpvFile.exists()) && !(await inputFile.exists());
-    if (filesMissing) {
-      final bytes = await rootBundle.load("assets/mangayomi_mpv.zip");
-      final archive = ZipDecoder().decodeBytes(bytes.buffer.asUint8List());
-      String shadersDir = p.join(dir.path, 'shaders');
-      await Directory(shadersDir).create(recursive: true);
-      String scriptsDir = p.join(dir.path, 'scripts');
-      await Directory(scriptsDir).create(recursive: true);
-      for (final file in archive.files) {
-        if (file.name == "mpv.conf") {
-          await mpvFile.writeAsBytes(file.content);
-        } else if (file.name == "input.conf") {
-          await inputFile.writeAsBytes(file.content);
-        } else if (file.name.startsWith("shaders/") &&
-            file.name.endsWith(".glsl")) {
-          final shaderFile = File('$shadersDir/${file.name.split("/").last}');
-          await shaderFile.writeAsBytes(file.content);
-        } else if (file.name.startsWith("scripts/") &&
-            (file.name.endsWith(".js") || file.name.endsWith(".lua"))) {
-          final scriptFile = File('$scriptsDir/${file.name.split("/").last}');
-          await scriptFile.writeAsBytes(file.content);
-        }
-      }
-    }
-  }
-
-  Future<void> _checkTrackerRefresh() async {
-    final prefs = await isar.trackPreferences
-        .filter()
-        .syncIdIsNotNull()
-        .findAll();
-    for (final pref in prefs) {
-      final temp = track.Track(
-        syncId: pref.syncId,
-        status: track.TrackStatus.completed,
-      );
-      ref
-          .read(
-            trackStateProvider(
-              track: temp,
-              itemType: null,
-              widgetRef: ref,
-            ).notifier,
-          )
-          .checkRefresh();
-    }
-  }
-}
-
-class _MouseBackButtonHandler extends StatelessWidget {
-  final GoRouter router;
-  final Widget child;
-
-  const _MouseBackButtonHandler({required this.router, required this.child});
-
-  @override
-  Widget build(BuildContext context) {
-    return Listener(
-      onPointerDown: (event) {
-        if (event.buttons & kBackMouseButton != 0) {
-          if (router.canPop()) router.pop();
-        }
-      },
-      child: child,
-    );
-  }
 }
 
 class AllowScrollBehavior extends MaterialScrollBehavior {
   // This allows the scrollable widgets to be scrolled with touch, mouse, stylus,
   // inverted stylus, trackpad, and unknown pointer devices.
-  // This is useful for accessibility purposes, such as when using VoiceAccess,
+  // This is also useful for accessibility purposes, such as when using VoiceAccess,
   // which sends pointer events with unknown type when scrolling scrollables.
-  // This is also useful for desktop platforms, where touch, stylus, and trackpad
-  // interactions are common, and we want to ensure a consistent scrolling experience
-  // across all devices.
   @override
   Set<PointerDeviceKind> get dragDevices => {
     PointerDeviceKind.touch,
