@@ -36,6 +36,9 @@ class MangaImageCardWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final hasData = libraryManga != null;
+    final totalChapters = hasData
+        ? libraryManga!.chapters.length
+        : (getMangaDetail?.chapters?.length ?? 0);
     return CoverViewWidget(
       bottomTextWidget: BottomTextWidget(
         maxLines: 1,
@@ -98,6 +101,26 @@ class MangaImageCardWidget extends ConsumerWidget {
           BottomTextWidget(
             isTorrent: source.isTorrent,
             text: getMangaDetail!.name!,
+          ),
+        if (totalChapters > 0)
+          Positioned(
+            bottom: isComfortableGrid ? 4 : 28,
+            right: 4,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.black.withValues(alpha: 0.75),
+                borderRadius: BorderRadius.circular(3),
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+              child: Text(
+                "$totalChapters ch",
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 9,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ),
       ],
     );

@@ -100,15 +100,14 @@ class _LibraryGridViewWidgetState extends State<LibraryGridViewWidget> {
                                       if (widget.downloadedChapter)
                                         DownloadCountBadge(entry: entry),
                                       Padding(
-                                        padding: const EdgeInsets.only(left: 3),
+                                        padding: const EdgeInsets.only(left: 3, right: 3),
                                         child: Text(
-                                          entry.chapters
-                                              .where((e) => !e.isRead!)
-                                              .length
-                                              .toString(),
+                                          "${entry.chapters.where((e) => e.isRead!).length}/${entry.chapters.length}",
                                           style: TextStyle(
                                             color:
                                                 context.dynamicBlackWhiteColor,
+                                            fontSize: 10,
+                                            fontWeight: FontWeight.bold,
                                           ),
                                         ),
                                       ),
