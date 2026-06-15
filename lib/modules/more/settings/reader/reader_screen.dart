@@ -1,10 +1,10 @@
-import 'package:mangayomi/utils/platform_utils.dart';
+import 'package:dokusho/utils/platform_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mangayomi/models/settings.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/utils/extensions/build_context_extensions.dart';
-import 'package:mangayomi/modules/more/settings/reader/providers/reader_state_provider.dart';
+import 'package:dokusho/models/settings.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/utils/extensions/build_context_extensions.dart';
+import 'package:dokusho/modules/more/settings/reader/providers/reader_state_provider.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
 
 class ReaderScreen extends ConsumerWidget {

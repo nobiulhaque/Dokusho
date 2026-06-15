@@ -3,12 +3,12 @@ import 'dart:isolate';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:mangayomi/eval/lib.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/source.dart';
-import 'package:mangayomi/providers/storage_provider.dart';
-import 'package:mangayomi/services/http/m_client.dart';
-import 'package:mangayomi/utils/log/log.dart';
+import 'package:dokusho/eval/lib.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/source.dart';
+import 'package:dokusho/providers/storage_provider.dart';
+import 'package:dokusho/services/http/m_client.dart';
+import 'package:dokusho/utils/log/log.dart';
 
 class _IsolateData {
   final SendPort sendPort;

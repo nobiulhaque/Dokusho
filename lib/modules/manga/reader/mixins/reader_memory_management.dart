@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
-import 'package:mangayomi/modules/manga/reader/managers/chapter_preload_manager.dart';
-import 'package:mangayomi/modules/manga/reader/u_chap_data_preload.dart';
-import 'package:mangayomi/services/get_chapter_pages.dart';
-import 'package:mangayomi/models/chapter.dart';
+import 'package:dokusho/modules/manga/reader/managers/chapter_preload_manager.dart';
+import 'package:dokusho/modules/manga/reader/u_chap_data_preload.dart';
+import 'package:dokusho/services/get_chapter_pages.dart';
+import 'package:dokusho/models/chapter.dart';
 
 mixin ReaderMemoryManagement {
   /// The preload manager that handles memory-bounded chapter caching.

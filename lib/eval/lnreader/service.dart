@@ -1,16 +1,16 @@
 import 'dart:convert';
 import 'package:flutter_qjs/flutter_qjs.dart';
-import 'package:mangayomi/eval/lnreader/http.dart';
-import 'package:mangayomi/eval/lnreader/m_plugin.dart';
-import 'package:mangayomi/eval/model/filter.dart';
-import 'package:mangayomi/eval/model/m_chapter.dart';
-import 'package:mangayomi/eval/model/m_manga.dart';
-import 'package:mangayomi/eval/model/m_pages.dart';
-import 'package:mangayomi/eval/model/source_preference.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/models/page.dart';
-import 'package:mangayomi/models/source.dart';
-import 'package:mangayomi/models/video.dart';
+import 'package:dokusho/eval/lnreader/http.dart';
+import 'package:dokusho/eval/lnreader/m_plugin.dart';
+import 'package:dokusho/eval/model/filter.dart';
+import 'package:dokusho/eval/model/m_chapter.dart';
+import 'package:dokusho/eval/model/m_manga.dart';
+import 'package:dokusho/eval/model/m_pages.dart';
+import 'package:dokusho/eval/model/source_preference.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/models/page.dart';
+import 'package:dokusho/models/source.dart';
+import 'package:dokusho/models/video.dart';
 
 import '../interface.dart';
 import 'js_cheerio.dart';
@@ -178,7 +178,7 @@ const extension = exports.default;
       await _extensionCallAsync('parseNovel(${jsonEncode(url)})', {}),
     );
     chapters = item.chapters;
-    if (chapters.isEmpty ?? true) {
+    if (chapters?.isEmpty ?? true) {
       final sourcePage = SourcePage.fromJson(
         await _extensionCallAsync(
           'parsePage(${jsonEncode(item.path)}, ${jsonEncode('1')})',
@@ -192,7 +192,7 @@ const extension = exports.default;
 
     final chaps =
         chapters
-            .map(
+            ?.map(
               (e) => MChapter(
                 name: e.name,
                 url: e.path,

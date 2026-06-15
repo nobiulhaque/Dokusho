@@ -7,12 +7,12 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:mangayomi/modules/manga/reader/u_chap_data_preload.dart';
-import 'package:mangayomi/modules/more/settings/reader/providers/reader_state_provider.dart';
-import 'package:mangayomi/modules/widgets/custom_extended_image_provider.dart';
-import 'package:mangayomi/providers/storage_provider.dart';
-import 'package:mangayomi/utils/headers.dart';
-import 'package:mangayomi/utils/reg_exp_matcher.dart';
+import 'package:dokusho/modules/manga/reader/u_chap_data_preload.dart';
+import 'package:dokusho/modules/more/settings/reader/providers/reader_state_provider.dart';
+import 'package:dokusho/modules/widgets/custom_extended_image_provider.dart';
+import 'package:dokusho/providers/storage_provider.dart';
+import 'package:dokusho/utils/headers.dart';
+import 'package:dokusho/utils/reg_exp_matcher.dart';
 import 'package:path/path.dart' as p;
 
 extension FileFormatter on num {

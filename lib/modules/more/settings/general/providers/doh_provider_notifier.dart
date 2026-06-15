@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/settings.dart';
-import 'package:mangayomi/services/http/doh/doh_providers.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/settings.dart';
+import 'package:dokusho/services/http/doh/doh_providers.dart';
 
 class DoHProviderState {
   final bool enabled;

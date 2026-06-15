@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:isar_community/isar.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/track_preference.dart';
-import 'package:mangayomi/modules/widgets/gridview_widget.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/utils/constant.dart';
-import 'package:mangayomi/utils/extensions/build_context_extensions.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/track_preference.dart';
+import 'package:dokusho/modules/widgets/gridview_widget.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/utils/constant.dart';
+import 'package:dokusho/utils/extensions/build_context_extensions.dart';
 
 class ManageTrackersScreen extends StatefulWidget {
   const ManageTrackersScreen({super.key});

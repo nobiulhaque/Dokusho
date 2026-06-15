@@ -1,15 +1,16 @@
 import 'dart:async';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:isar_community/isar.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/models/source.dart';
-import 'package:mangayomi/modules/widgets/manga_image_card_widget.dart';
-import 'package:mangayomi/modules/widgets/progress_center.dart';
-import 'package:mangayomi/services/get_popular.dart';
-import 'package:mangayomi/utils/extensions/build_context_extensions.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/models/source.dart';
+import 'package:dokusho/modules/widgets/manga_image_card_widget.dart';
+import 'package:dokusho/modules/widgets/progress_center.dart';
+import 'package:dokusho/services/get_popular.dart';
+import 'package:dokusho/utils/extensions/build_context_extensions.dart';
 
 class ExploreFeedScreen extends ConsumerStatefulWidget {
   const ExploreFeedScreen({super.key});
@@ -125,7 +126,7 @@ class ExploreFeedRow extends ConsumerWidget {
         Padding(
           padding: const EdgeInsets.only(left: 12.0, right: 12.0, top: 16.0, bottom: 8.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.between,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 source.name ?? "Unknown Source",

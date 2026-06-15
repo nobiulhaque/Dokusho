@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/modules/library/widgets/continue_reader_button.dart';
-import 'package:mangayomi/modules/manga/detail/providers/state_providers.dart';
-import 'package:mangayomi/modules/library/widgets/library_entry_utils.dart';
-import 'package:mangayomi/utils/extensions/build_context_extensions.dart';
-import 'package:mangayomi/modules/widgets/listview_widget.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/modules/library/widgets/continue_reader_button.dart';
+import 'package:dokusho/modules/manga/detail/providers/state_providers.dart';
+import 'package:dokusho/modules/library/widgets/library_entry_utils.dart';
+import 'package:dokusho/utils/extensions/build_context_extensions.dart';
+import 'package:dokusho/modules/widgets/listview_widget.dart';
 
 class LibraryListViewWidget extends StatelessWidget {
   final List<Manga> entriesManga;

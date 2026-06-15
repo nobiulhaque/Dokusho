@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/settings.dart';
-import 'package:mangayomi/providers/storage_provider.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/settings.dart';
+import 'package:dokusho/providers/storage_provider.dart';
 import 'package:path/path.dart' as path;
 
 class AppLogger {

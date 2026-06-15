@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'package:http/http.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/models/settings.dart';
-import 'package:mangayomi/models/source.dart';
-import 'package:mangayomi/services/fetch_item_sources.dart';
-import 'package:mangayomi/services/http/m_client.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/models/settings.dart';
+import 'package:dokusho/models/source.dart';
+import 'package:dokusho/services/fetch_item_sources.dart';
+import 'package:dokusho/services/http/m_client.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'browse_state_provider.g.dart';
 

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/models/settings.dart';
-import 'package:mangayomi/modules/library/providers/isar_providers.dart';
-import 'package:mangayomi/modules/library/providers/library_filter_provider.dart';
-import 'package:mangayomi/modules/library/providers/library_state_provider.dart';
-import 'package:mangayomi/modules/library/widgets/library_gridview_widget.dart';
-import 'package:mangayomi/modules/library/widgets/library_listview_widget.dart';
-import 'package:mangayomi/modules/widgets/error_text.dart';
-import 'package:mangayomi/modules/widgets/progress_center.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/services/library_updater.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/models/settings.dart';
+import 'package:dokusho/modules/library/providers/isar_providers.dart';
+import 'package:dokusho/modules/library/providers/library_filter_provider.dart';
+import 'package:dokusho/modules/library/providers/library_state_provider.dart';
+import 'package:dokusho/modules/library/widgets/library_gridview_widget.dart';
+import 'package:dokusho/modules/library/widgets/library_listview_widget.dart';
+import 'package:dokusho/modules/widgets/error_text.dart';
+import 'package:dokusho/modules/widgets/progress_center.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/services/library_updater.dart';
 
 /// Displays the library body content for a given category (or uncategorized).
 ///

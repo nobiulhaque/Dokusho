@@ -1,16 +1,16 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mangayomi/modules/library/providers/isar_providers.dart';
-import 'package:mangayomi/modules/library/providers/library_filter_provider.dart';
-import 'package:mangayomi/modules/library/providers/library_state_provider.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/modules/manga/detail/providers/state_providers.dart';
-import 'package:mangayomi/modules/widgets/manga_image_card_widget.dart';
-import 'package:mangayomi/utils/cached_network.dart';
-import 'package:mangayomi/utils/constant.dart';
-import 'package:mangayomi/utils/extensions/build_context_extensions.dart';
-import 'package:mangayomi/utils/headers.dart';
+import 'package:dokusho/modules/library/providers/isar_providers.dart';
+import 'package:dokusho/modules/library/providers/library_filter_provider.dart';
+import 'package:dokusho/modules/library/providers/library_state_provider.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/modules/manga/detail/providers/state_providers.dart';
+import 'package:dokusho/modules/widgets/manga_image_card_widget.dart';
+import 'package:dokusho/utils/cached_network.dart';
+import 'package:dokusho/utils/constant.dart';
+import 'package:dokusho/utils/extensions/build_context_extensions.dart';
+import 'package:dokusho/utils/headers.dart';
 
 /// Resolves the correct [ImageProvider] for a manga entry, preferring a custom
 /// local cover over the remote URL. Remote covers are wrapped in

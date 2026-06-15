@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:isar_community/isar.dart';
-import 'package:mangayomi/eval/model/source_preference.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/changed.dart';
-import 'package:mangayomi/models/source.dart';
-import 'package:mangayomi/modules/more/settings/sync/providers/sync_providers.dart';
-import 'package:mangayomi/services/fetch_item_sources.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/services/fetch_sources_list.dart';
-import 'package:mangayomi/utils/cached_network.dart';
-import 'package:mangayomi/utils/extensions/build_context_extensions.dart';
-import 'package:mangayomi/utils/language.dart';
+import 'package:dokusho/eval/model/source_preference.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/changed.dart';
+import 'package:dokusho/models/source.dart';
+import 'package:dokusho/modules/more/settings/sync/providers/sync_providers.dart';
+import 'package:dokusho/services/fetch_item_sources.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/services/fetch_sources_list.dart';
+import 'package:dokusho/utils/cached_network.dart';
+import 'package:dokusho/utils/extensions/build_context_extensions.dart';
+import 'package:dokusho/utils/language.dart';
 
 final extensionListTileWidget = Provider.family<Widget, Source>((ref, source) {
   return ExtensionListTileWidget(source: source);

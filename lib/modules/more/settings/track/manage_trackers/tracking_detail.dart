@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:isar_community/isar.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/models/track.dart';
-import 'package:mangayomi/models/track_preference.dart';
-import 'package:mangayomi/modules/manga/detail/widgets/tracker_widget.dart';
-import 'package:mangayomi/modules/tracker_library/tracker_library_screen.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/utils/constant.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/models/track.dart';
+import 'package:dokusho/models/track_preference.dart';
+import 'package:dokusho/modules/manga/detail/widgets/tracker_widget.dart';
+import 'package:dokusho/modules/tracker_library/tracker_library_screen.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/utils/constant.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
 
 class TrackingDetail extends StatefulWidget {

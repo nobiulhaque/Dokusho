@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:grouped_list/grouped_list.dart';
 import 'package:isar_community/isar.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/chapter.dart';
-import 'package:mangayomi/models/download.dart';
-import 'package:mangayomi/modules/manga/detail/widgets/custom_floating_action_btn.dart';
-import 'package:mangayomi/modules/manga/download/providers/download_provider.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/utils/extensions/chapter_extensions.dart';
-import 'package:mangayomi/utils/global_style.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/chapter.dart';
+import 'package:dokusho/models/download.dart';
+import 'package:dokusho/modules/manga/detail/widgets/custom_floating_action_btn.dart';
+import 'package:dokusho/modules/manga/download/providers/download_provider.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/utils/extensions/chapter_extensions.dart';
+import 'package:dokusho/utils/global_style.dart';
 
 class DownloadQueueScreen extends ConsumerWidget {
   const DownloadQueueScreen({super.key});

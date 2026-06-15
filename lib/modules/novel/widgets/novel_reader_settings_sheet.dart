@@ -1,10 +1,10 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mangayomi/models/settings.dart';
-import 'package:mangayomi/modules/more/settings/reader/providers/reader_state_provider.dart';
-import 'package:mangayomi/modules/novel/novel_reader_controller_provider.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
+import 'package:dokusho/models/settings.dart';
+import 'package:dokusho/modules/more/settings/reader/providers/reader_state_provider.dart';
+import 'package:dokusho/modules/novel/novel_reader_controller_provider.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
 
 class ReaderSettingsTab extends ConsumerWidget {
   const ReaderSettingsTab({super.key});

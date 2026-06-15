@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:isar_community/isar.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/models/source.dart';
-import 'package:mangayomi/modules/more/settings/reader/providers/reader_state_provider.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/providers/storage_provider.dart';
-import 'package:mangayomi/modules/browse/extension/extension_screen.dart';
-import 'package:mangayomi/modules/browse/explore_feed_screen.dart';
-import 'package:mangayomi/modules/library/widgets/search_text_form_field.dart';
-import 'package:mangayomi/services/fetch_sources_list.dart';
-import 'package:mangayomi/utils/item_type_localization.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/models/source.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/providers/storage_provider.dart';
+import 'package:dokusho/modules/browse/extension/extension_screen.dart';
+import 'package:dokusho/modules/browse/explore_feed_screen.dart';
+import 'package:dokusho/modules/library/widgets/search_text_form_field.dart';
+import 'package:dokusho/services/fetch_sources_list.dart';
+import 'package:dokusho/utils/item_type_localization.dart';
 
 class BrowseScreen extends ConsumerStatefulWidget {
   const BrowseScreen({super.key});

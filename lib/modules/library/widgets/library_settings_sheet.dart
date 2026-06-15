@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/models/settings.dart';
-import 'package:mangayomi/modules/library/providers/library_state_provider.dart';
-import 'package:mangayomi/modules/manga/detail/widgets/chapter_filter_list_tile_widget.dart';
-import 'package:mangayomi/modules/manga/detail/widgets/chapter_sort_list_tile_widget.dart';
-import 'package:mangayomi/modules/widgets/custom_draggable_tabbar.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/utils/extensions/build_context_extensions.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/models/settings.dart';
+import 'package:dokusho/modules/library/providers/library_state_provider.dart';
+import 'package:dokusho/modules/manga/detail/widgets/chapter_filter_list_tile_widget.dart';
+import 'package:dokusho/modules/manga/detail/widgets/chapter_sort_list_tile_widget.dart';
+import 'package:dokusho/modules/widgets/custom_draggable_tabbar.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/utils/extensions/build_context_extensions.dart';
 
 /// Shows the library filter/sort/display settings sheet.
 void showLibrarySettingsSheet({

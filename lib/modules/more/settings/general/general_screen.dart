@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/settings.dart';
-import 'package:mangayomi/modules/more/providers/algorithm_weights_state_provider.dart';
-import 'package:mangayomi/modules/more/settings/general/providers/general_state_provider.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/modules/more/settings/general/providers/doh_provider_notifier.dart';
-import 'package:mangayomi/utils/extensions/build_context_extensions.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/settings.dart';
+import 'package:dokusho/modules/more/providers/algorithm_weights_state_provider.dart';
+import 'package:dokusho/modules/more/settings/general/providers/general_state_provider.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/modules/more/settings/general/providers/doh_provider_notifier.dart';
+import 'package:dokusho/utils/extensions/build_context_extensions.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
 
 class GeneralScreen extends ConsumerStatefulWidget {

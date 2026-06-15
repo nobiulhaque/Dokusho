@@ -1,5 +1,5 @@
-import 'package:mangayomi/eval/lib.dart';
-import 'package:mangayomi/models/source.dart';
+import 'package:dokusho/eval/lib.dart';
+import 'package:dokusho/models/source.dart';
 
 List<dynamic> getFilterList({required Source source}) {
   final service = getExtensionService(source, "");

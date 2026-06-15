@@ -1,11 +1,11 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mangayomi/l10n/generated/app_localizations.dart';
-import 'package:mangayomi/modules/library/providers/file_scanner.dart';
-import 'package:mangayomi/modules/more/settings/downloads/providers/downloads_state_provider.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/utils/extensions/build_context_extensions.dart';
+import 'package:dokusho/l10n/generated/app_localizations.dart';
+import 'package:dokusho/modules/library/providers/file_scanner.dart';
+import 'package:dokusho/modules/more/settings/downloads/providers/downloads_state_provider.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/utils/extensions/build_context_extensions.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 class DownloadsScreen extends ConsumerStatefulWidget {

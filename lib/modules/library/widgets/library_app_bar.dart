@@ -1,23 +1,23 @@
-import 'package:mangayomi/utils/platform_utils.dart';
+import 'package:dokusho/utils/platform_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/models/settings.dart';
-import 'package:mangayomi/modules/library/library_screen.dart';
-import 'package:mangayomi/modules/library/providers/isar_providers.dart';
-import 'package:mangayomi/modules/library/providers/library_state_provider.dart';
-import 'package:mangayomi/modules/library/widgets/library_dialogs.dart';
-import 'package:mangayomi/modules/library/widgets/library_settings_sheet.dart';
-import 'package:mangayomi/modules/library/widgets/search_text_form_field.dart';
-import 'package:mangayomi/modules/manga/detail/providers/state_providers.dart';
-import 'package:mangayomi/modules/widgets/error_text.dart';
-import 'package:mangayomi/modules/widgets/progress_center.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/services/library_updater.dart';
-import 'package:mangayomi/utils/extensions/build_context_extensions.dart';
-import 'package:mangayomi/utils/global_style.dart';
-import 'package:mangayomi/utils/item_type_localization.dart';
-import 'package:mangayomi/modules/widgets/manga_image_card_widget.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/models/settings.dart';
+import 'package:dokusho/modules/library/library_screen.dart';
+import 'package:dokusho/modules/library/providers/isar_providers.dart';
+import 'package:dokusho/modules/library/providers/library_state_provider.dart';
+import 'package:dokusho/modules/library/widgets/library_dialogs.dart';
+import 'package:dokusho/modules/library/widgets/library_settings_sheet.dart';
+import 'package:dokusho/modules/library/widgets/search_text_form_field.dart';
+import 'package:dokusho/modules/manga/detail/providers/state_providers.dart';
+import 'package:dokusho/modules/widgets/error_text.dart';
+import 'package:dokusho/modules/widgets/progress_center.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/services/library_updater.dart';
+import 'package:dokusho/utils/extensions/build_context_extensions.dart';
+import 'package:dokusho/utils/global_style.dart';
+import 'package:dokusho/utils/item_type_localization.dart';
+import 'package:dokusho/modules/widgets/manga_image_card_widget.dart';
 
 /// AppBar for the library screen.
 ///

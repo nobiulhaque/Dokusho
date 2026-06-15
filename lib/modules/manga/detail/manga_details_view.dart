@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:isar_community/isar.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/category.dart';
-import 'package:mangayomi/models/chapter.dart';
-import 'package:mangayomi/models/history.dart';
-import 'package:mangayomi/modules/manga/detail/widgets/custom_floating_action_btn.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/modules/widgets/category_selection_dialog.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/utils/extensions/build_context_extensions.dart';
-import 'package:mangayomi/utils/constant.dart';
-import 'package:mangayomi/modules/manga/detail/manga_detail_view.dart';
-import 'package:mangayomi/modules/manga/detail/providers/state_providers.dart';
-import 'package:mangayomi/modules/more/providers/incognito_mode_state_provider.dart';
-import 'package:mangayomi/utils/extensions/chapter_extensions.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/category.dart';
+import 'package:dokusho/models/chapter.dart';
+import 'package:dokusho/models/history.dart';
+import 'package:dokusho/modules/manga/detail/widgets/custom_floating_action_btn.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/modules/widgets/category_selection_dialog.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/utils/extensions/build_context_extensions.dart';
+import 'package:dokusho/utils/constant.dart';
+import 'package:dokusho/modules/manga/detail/manga_detail_view.dart';
+import 'package:dokusho/modules/manga/detail/providers/state_providers.dart';
+import 'package:dokusho/modules/more/providers/incognito_mode_state_provider.dart';
+import 'package:dokusho/utils/extensions/chapter_extensions.dart';
 
 class MangaDetailsView extends ConsumerStatefulWidget {
   final Manga manga;

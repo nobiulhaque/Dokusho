@@ -1,10 +1,10 @@
 import 'package:isar_community/isar.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/chapter.dart';
-import 'package:mangayomi/models/download.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/models/settings.dart';
-import 'package:mangayomi/utils/chapter_recognition.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/chapter.dart';
+import 'package:dokusho/models/download.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/models/settings.dart';
+import 'package:dokusho/utils/chapter_recognition.dart';
 
 extension MangaExtensions on Manga {
   /// Filtered chapters respecting the user's active filters (unread,

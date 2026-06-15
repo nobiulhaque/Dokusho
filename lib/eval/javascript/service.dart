@@ -1,18 +1,18 @@
 import 'dart:collection';
 import 'dart:convert';
 import 'package:flutter_qjs/flutter_qjs.dart';
-import 'package:mangayomi/eval/javascript/dom_selector.dart';
-import 'package:mangayomi/eval/javascript/extractors.dart';
-import 'package:mangayomi/eval/javascript/http.dart';
-import 'package:mangayomi/eval/javascript/preferences.dart';
-import 'package:mangayomi/eval/javascript/utils.dart';
-import 'package:mangayomi/eval/model/filter.dart';
-import 'package:mangayomi/eval/model/m_manga.dart';
-import 'package:mangayomi/eval/model/m_pages.dart';
-import 'package:mangayomi/eval/model/source_preference.dart';
-import 'package:mangayomi/models/page.dart';
-import 'package:mangayomi/models/source.dart';
-import 'package:mangayomi/models/video.dart';
+import 'package:dokusho/eval/javascript/dom_selector.dart';
+import 'package:dokusho/eval/javascript/extractors.dart';
+import 'package:dokusho/eval/javascript/http.dart';
+import 'package:dokusho/eval/javascript/preferences.dart';
+import 'package:dokusho/eval/javascript/utils.dart';
+import 'package:dokusho/eval/model/filter.dart';
+import 'package:dokusho/eval/model/m_manga.dart';
+import 'package:dokusho/eval/model/m_pages.dart';
+import 'package:dokusho/eval/model/source_preference.dart';
+import 'package:dokusho/models/page.dart';
+import 'package:dokusho/models/source.dart';
+import 'package:dokusho/models/video.dart';
 
 import '../interface.dart';
 

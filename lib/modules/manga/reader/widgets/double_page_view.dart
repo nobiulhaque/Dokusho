@@ -1,15 +1,15 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/settings.dart';
-import 'package:mangayomi/modules/manga/reader/image_view_paged.dart';
-import 'package:mangayomi/modules/manga/reader/u_chap_data_preload.dart';
-import 'package:mangayomi/modules/manga/reader/widgets/circular_progress_indicator_animate_rotate.dart';
-import 'package:mangayomi/modules/manga/reader/widgets/transition_view_paged.dart';
-import 'package:mangayomi/modules/manga/reader/widgets/transition_view_vertical.dart';
-import 'package:mangayomi/modules/more/settings/reader/reader_screen.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/utils/extensions/build_context_extensions.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/settings.dart';
+import 'package:dokusho/modules/manga/reader/image_view_paged.dart';
+import 'package:dokusho/modules/manga/reader/u_chap_data_preload.dart';
+import 'package:dokusho/modules/manga/reader/widgets/circular_progress_indicator_animate_rotate.dart';
+import 'package:dokusho/modules/manga/reader/widgets/transition_view_paged.dart';
+import 'package:dokusho/modules/manga/reader/widgets/transition_view_vertical.dart';
+import 'package:dokusho/modules/more/settings/reader/reader_screen.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/utils/extensions/build_context_extensions.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 

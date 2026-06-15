@@ -1,8 +1,8 @@
 import 'package:http_interceptor/http_interceptor.dart';
-import 'package:mangayomi/models/video.dart';
-import 'package:mangayomi/services/http/m_client.dart';
-import 'package:mangayomi/utils/extensions/others.dart';
-import 'package:mangayomi/utils/extensions/string_extensions.dart';
+import 'package:dokusho/models/video.dart';
+import 'package:dokusho/services/http/m_client.dart';
+import 'package:dokusho/utils/extensions/others.dart';
+import 'package:dokusho/utils/extensions/string_extensions.dart';
 
 class StreamlareExtractor {
   final InterceptedClient client = MClient.init(

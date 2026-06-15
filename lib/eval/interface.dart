@@ -1,6 +1,6 @@
-import 'package:mangayomi/models/page.dart';
-import 'package:mangayomi/models/source.dart';
-import 'package:mangayomi/models/video.dart';
+import 'package:dokusho/models/page.dart';
+import 'package:dokusho/models/source.dart';
+import 'package:dokusho/models/video.dart';
 
 import 'model/filter.dart';
 import 'model/m_manga.dart';

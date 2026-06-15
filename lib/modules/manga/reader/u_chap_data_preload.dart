@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:mangayomi/models/chapter.dart';
-import 'package:mangayomi/models/page.dart';
-import 'package:mangayomi/services/get_chapter_pages.dart';
+import 'package:dokusho/models/chapter.dart';
+import 'package:dokusho/models/page.dart';
+import 'package:dokusho/services/get_chapter_pages.dart';
 
 class UChapDataPreload {
   Chapter? chapter;

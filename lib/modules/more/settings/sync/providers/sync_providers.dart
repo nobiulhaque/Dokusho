@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:isar_community/isar.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/changed.dart';
-import 'package:mangayomi/models/sync_preference.dart';
-import 'package:mangayomi/services/sync_server.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/changed.dart';
+import 'package:dokusho/models/sync_preference.dart';
+import 'package:dokusho/services/sync_server.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'sync_providers.g.dart';
 

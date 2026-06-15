@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:isar_community/isar.dart';
-import 'package:mangayomi/eval/model/filter.dart';
-import 'package:mangayomi/eval/model/m_source.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/models/settings.dart';
+import 'package:dokusho/eval/model/filter.dart';
+import 'package:dokusho/eval/model/m_source.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/models/settings.dart';
 part 'source.g.dart';
 
 @collection

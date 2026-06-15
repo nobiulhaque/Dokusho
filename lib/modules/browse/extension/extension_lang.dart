@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:isar_community/isar.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/models/source.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/modules/browse/extension/widgets/extension_lang_list_tile_widget.dart';
-import 'package:mangayomi/utils/global_style.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/models/source.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/modules/browse/extension/widgets/extension_lang_list_tile_widget.dart';
+import 'package:dokusho/utils/global_style.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
 
 class ExtensionsLang extends ConsumerWidget {

@@ -1,6 +1,6 @@
 import 'package:archive/archive.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/settings.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/settings.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'backup_compression.g.dart';

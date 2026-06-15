@@ -1,8 +1,8 @@
 import 'dart:typed_data';
-import 'package:mangayomi/services/http/rhttp/src/client/rhttp_client.dart';
-import 'package:mangayomi/services/http/rhttp/src/model/cancel_token.dart';
-import 'package:mangayomi/services/http/rhttp/src/model/settings.dart';
-import 'package:mangayomi/src/rust/api/rhttp/http.dart' as rust;
+import 'package:dokusho/services/http/rhttp/src/client/rhttp_client.dart';
+import 'package:dokusho/services/http/rhttp/src/model/cancel_token.dart';
+import 'package:dokusho/services/http/rhttp/src/model/settings.dart';
+import 'package:dokusho/src/rust/api/rhttp/http.dart' as rust;
 
 /// An HTTP request that can be used
 /// on a client or statically.

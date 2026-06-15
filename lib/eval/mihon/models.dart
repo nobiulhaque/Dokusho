@@ -1,4 +1,4 @@
-import 'package:mangayomi/models/manga.dart';
+import 'package:dokusho/models/manga.dart';
 
 class MangaPages {
   List<SManga> list;

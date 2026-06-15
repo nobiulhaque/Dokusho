@@ -1,4 +1,4 @@
-import 'package:mangayomi/eval/javascript/http.dart';
+import 'package:dokusho/eval/javascript/http.dart';
 
 class PageUrl {
   String url;

@@ -1,15 +1,15 @@
 import 'package:flutter_riverpod/misc.dart';
 import 'package:isar_community/isar.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/chapter.dart';
-import 'package:mangayomi/models/settings.dart';
-import 'package:mangayomi/models/track.dart';
-import 'package:mangayomi/modules/manga/reader/mixins/chapter_controller_mixin.dart';
-import 'package:mangayomi/utils/extensions/chapter_extensions.dart';
-import 'package:mangayomi/modules/more/settings/player/providers/player_state_provider.dart';
-import 'package:mangayomi/services/aniskip.dart';
-import 'package:mangayomi/utils/chapter_recognition.dart';
-import 'package:mangayomi/utils/riverpod.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/chapter.dart';
+import 'package:dokusho/models/settings.dart';
+import 'package:dokusho/models/track.dart';
+import 'package:dokusho/modules/manga/reader/mixins/chapter_controller_mixin.dart';
+import 'package:dokusho/utils/extensions/chapter_extensions.dart';
+import 'package:dokusho/modules/more/settings/player/providers/player_state_provider.dart';
+import 'package:dokusho/services/aniskip.dart';
+import 'package:dokusho/utils/chapter_recognition.dart';
+import 'package:dokusho/utils/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'anime_player_controller_provider.g.dart';
 

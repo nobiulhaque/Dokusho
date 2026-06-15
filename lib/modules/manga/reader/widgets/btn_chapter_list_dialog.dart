@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/chapter.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/modules/manga/reader/providers/push_router.dart';
-import 'package:mangayomi/utils/extensions/manga_extensions.dart';
-import 'package:mangayomi/modules/manga/reader/reader_view.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/utils/date.dart';
-import 'package:mangayomi/utils/extensions/build_context_extensions.dart';
-import 'package:mangayomi/utils/extensions/string_extensions.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/chapter.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/modules/manga/reader/providers/push_router.dart';
+import 'package:dokusho/utils/extensions/manga_extensions.dart';
+import 'package:dokusho/modules/manga/reader/reader_view.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/utils/date.dart';
+import 'package:dokusho/utils/extensions/build_context_extensions.dart';
+import 'package:dokusho/utils/extensions/string_extensions.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
 
 Widget btnToShowChapterListDialog(

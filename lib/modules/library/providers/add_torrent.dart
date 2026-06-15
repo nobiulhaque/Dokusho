@@ -1,8 +1,8 @@
 import 'package:file_picker/file_picker.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/chapter.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/services/torrent_server.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/chapter.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/services/torrent_server.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'add_torrent.g.dart';
 

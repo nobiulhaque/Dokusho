@@ -1,19 +1,19 @@
-import 'package:mangayomi/utils/platform_utils.dart';
+import 'package:dokusho/utils/platform_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:isar_community/isar.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/category.dart';
-import 'package:mangayomi/models/changed.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/modules/more/categories/providers/isar_providers.dart';
-import 'package:mangayomi/modules/more/categories/widgets/custom_textfield.dart';
-import 'package:mangayomi/modules/more/settings/reader/providers/reader_state_provider.dart';
-import 'package:mangayomi/modules/more/settings/sync/providers/sync_providers.dart';
-import 'package:mangayomi/modules/widgets/progress_center.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/utils/item_type_filters.dart';
-import 'package:mangayomi/utils/item_type_localization.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/category.dart';
+import 'package:dokusho/models/changed.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/modules/more/categories/providers/isar_providers.dart';
+import 'package:dokusho/modules/more/categories/widgets/custom_textfield.dart';
+import 'package:dokusho/modules/more/settings/reader/providers/reader_state_provider.dart';
+import 'package:dokusho/modules/more/settings/sync/providers/sync_providers.dart';
+import 'package:dokusho/modules/widgets/progress_center.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/utils/item_type_filters.dart';
+import 'package:dokusho/utils/item_type_localization.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
 
 class CategoriesScreen extends ConsumerStatefulWidget {

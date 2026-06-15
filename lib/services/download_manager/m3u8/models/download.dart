@@ -1,8 +1,8 @@
 import 'dart:isolate';
 import 'dart:typed_data';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/models/page.dart';
-import 'package:mangayomi/services/download_manager/m3u8/models/ts_info.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/models/page.dart';
+import 'package:dokusho/services/download_manager/m3u8/models/ts_info.dart';
 
 class DownloadParams {
   final List<TsInfo>? segments;

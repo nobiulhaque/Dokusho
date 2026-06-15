@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_qjs/quickjs/ffi.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
-import 'package:mangayomi/providers/l10n_providers.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -125,7 +125,7 @@ class _DownloadFileScreenState extends ConsumerState<DownloadFileScreen> {
     Directory? dir = Directory('/storage/emulated/0/Download');
     if (!await dir.exists()) dir = await getExternalStorageDirectory();
     final file = File(
-      '${dir.path}/${url.split("/").lastOrNull ?? "Mangayomi.apk"}',
+      '${dir!.path}/${url.split("/").lastOrNull ?? "Dokusho.apk"}',
     );
     if (await file.exists()) {
       await _installApk(file);

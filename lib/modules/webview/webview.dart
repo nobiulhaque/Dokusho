@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/modules/more/settings/general/providers/general_state_provider.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/services/http/m_client.dart';
-import 'package:mangayomi/utils/constant.dart';
-import 'package:mangayomi/utils/global_style.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/modules/more/settings/general/providers/general_state_provider.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/services/http/m_client.dart';
+import 'package:dokusho/utils/constant.dart';
+import 'package:dokusho/utils/global_style.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share_plus/share_plus.dart';
 

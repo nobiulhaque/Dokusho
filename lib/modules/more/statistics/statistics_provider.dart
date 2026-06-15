@@ -1,9 +1,9 @@
 import 'package:isar_community/isar.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/chapter.dart';
-import 'package:mangayomi/models/download.dart';
-import 'package:mangayomi/models/history.dart';
-import 'package:mangayomi/models/manga.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/chapter.dart';
+import 'package:dokusho/models/download.dart';
+import 'package:dokusho/models/history.dart';
+import 'package:dokusho/models/manga.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'statistics_provider.g.dart';
 

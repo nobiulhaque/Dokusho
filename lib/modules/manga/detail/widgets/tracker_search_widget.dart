@@ -1,14 +1,14 @@
-import 'package:mangayomi/utils/platform_utils.dart';
+import 'package:dokusho/utils/platform_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/models/track.dart';
-import 'package:mangayomi/models/track_search.dart';
-import 'package:mangayomi/modules/manga/detail/providers/track_state_providers.dart';
-import 'package:mangayomi/modules/widgets/custom_extended_image_provider.dart';
-import 'package:mangayomi/modules/widgets/error_text.dart';
-import 'package:mangayomi/modules/widgets/progress_center.dart';
-import 'package:mangayomi/utils/extensions/build_context_extensions.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/models/track.dart';
+import 'package:dokusho/models/track_search.dart';
+import 'package:dokusho/modules/manga/detail/providers/track_state_providers.dart';
+import 'package:dokusho/modules/widgets/custom_extended_image_provider.dart';
+import 'package:dokusho/modules/widgets/error_text.dart';
+import 'package:dokusho/modules/widgets/progress_center.dart';
+import 'package:dokusho/utils/extensions/build_context_extensions.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
 
 class TrackerWidgetSearch extends ConsumerStatefulWidget {

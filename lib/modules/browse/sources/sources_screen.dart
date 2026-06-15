@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mangayomi/modules/browse/browse_screen.dart';
-import 'package:mangayomi/modules/widgets/custom_sliver_grouped_list_view.dart';
+import 'package:dokusho/modules/widgets/custom_sliver_grouped_list_view.dart';
 import 'package:isar_community/isar.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/manga.dart';
-import 'package:mangayomi/models/source.dart';
-import 'package:mangayomi/modules/browse/sources/widgets/source_list_tile.dart';
-import 'package:mangayomi/modules/more/settings/browse/providers/browse_state_provider.dart';
-import 'package:mangayomi/providers/l10n_providers.dart';
-import 'package:mangayomi/utils/language.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/manga.dart';
+import 'package:dokusho/models/source.dart';
+import 'package:dokusho/modules/browse/sources/widgets/source_list_tile.dart';
+import 'package:dokusho/modules/more/settings/browse/providers/browse_state_provider.dart';
+import 'package:dokusho/providers/l10n_providers.dart';
+import 'package:dokusho/utils/language.dart';
 
 class SourcesScreen extends ConsumerStatefulWidget {
   final Function(int) tabIndex;
-  final List<BrowseTab> tabs;
   final ItemType itemType;
   const SourcesScreen({
     required this.tabIndex,
     required this.itemType,
-    required this.tabs,
     super.key,
   });
 
@@ -70,15 +67,7 @@ class _SourcesScreenState extends ConsumerState<SourcesScreen> {
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      final extensionIndex = widget.tabs.indexWhere(
-                        (t) =>
-                            t.type == widget.itemType &&
-                            t.kind == BrowseTabKind.extensions,
-                      );
-
-                      if (extensionIndex != -1) {
-                        widget.tabIndex(extensionIndex);
-                      }
+                      widget.tabIndex(1);
                     },
                     icon: const Icon(Icons.extension_rounded),
                     label: Text(context.l10n.show_extensions),

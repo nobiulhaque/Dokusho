@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mangayomi/main.dart';
-import 'package:mangayomi/models/settings.dart';
+import 'package:dokusho/main.dart';
+import 'package:dokusho/models/settings.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:mangayomi/l10n/generated/app_localizations.dart';
+import 'package:dokusho/l10n/generated/app_localizations.dart';
 part 'l10n_providers.g.dart';
 
 @riverpod

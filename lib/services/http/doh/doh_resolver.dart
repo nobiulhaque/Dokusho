@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
-import 'package:mangayomi/services/http/doh/doh_providers.dart';
+import 'package:dokusho/services/http/doh/doh_providers.dart';
 
 /// Cache entry with dynamic TTL
 class _CacheEntry {
